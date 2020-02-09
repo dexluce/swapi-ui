@@ -6,10 +6,15 @@ interface AuthContext {
 };
 
 const initialState: AuthContext = {
+  /** Public Variables */
   isAuthenticated: localStorage.getItem("authToken") ? true : false,
+
+  /** Public Function */
   signIn: (user: string, password: string) => {
+    /** Here is the place to call a auth api. */
     localStorage.setItem("authToken", "true");
     initialState.isAuthenticated = true;
+    window.location.reload();
   }
 }
 
