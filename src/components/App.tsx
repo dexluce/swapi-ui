@@ -1,9 +1,14 @@
 import React from 'react';
-import Login from './Login';
 import './App.css';
+
+/** Routing */
+import { BrowserRouter, Switch } from 'react-router-dom';
 import PrivateRoute from '../routes/PrivateRoute';
+import UnprotectedRoute from '../routes/UnprotectedRoute';
+
+/** Pages */
+import Login from './Login';
 import StarWarsList from './StarWarsList';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
 
 export default class App extends React.Component {
   render() {
@@ -14,7 +19,7 @@ export default class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <PrivateRoute exact path="/" component={StarWarsList}/>
-          <Route path="/login" component={Login}/>
+          <UnprotectedRoute path="/login" component={Login}/>
         </Switch>
       </BrowserRouter>
     </div>
