@@ -19,7 +19,7 @@ export const searchActionCreator: ActionCreator<ThunkAction<
   // The type of the parameter for the nested function
   string,
   // The type of the last action to be dispatched
-  SearchSuccessAction
+  SearchSuccessAction | SearchErrorAction
 >> = (search: string) => {
   return async (dispatch: Dispatch) => {
     dispatch({ type: "SEARCH" });
