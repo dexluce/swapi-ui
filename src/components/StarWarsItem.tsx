@@ -26,14 +26,10 @@ export default class StarWarsItem extends Component<{item: Item}> {
   }
 
   displayItemDetails() {
-    for (let [key, value] of Object.entries(this.props.item)) {
-      console.log(`${key}: ${value}`);
-    }
     this.setState({ open: true });
   }
 
   closeItemDetails() {
-    console.log("closeItemDetails");
     this.setState({ open: false });
   }
 

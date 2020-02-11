@@ -50,7 +50,7 @@ export default connect(
             <Error shouldDisplay={this.props.searchError}/>
             <h1>star wars SWAPI search</h1>
           </Grid>
-          <Grid xs={2}>
+          <Grid item xs={2}>
             <Loading searching={this.props.searching}/>
           </Grid>
           <Grid item xs={12}>
