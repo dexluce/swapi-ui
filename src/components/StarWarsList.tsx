@@ -45,9 +45,13 @@ export default connect(
     render() {
       return (
         <Grid container style={{textAlign: "center"}}>
-          <Grid item xs={12}>
+          <Grid item xs={2}></Grid>
+          <Grid item xs={8}>
             <Error shouldDisplay={this.props.searchError}/>
             <h1>star wars SWAPI search</h1>
+          </Grid>
+          <Grid xs={2}>
+            <Loading searching={this.props.searching}/>
           </Grid>
           <Grid item xs={12}>
             <TextField
@@ -61,7 +65,6 @@ export default connect(
             <StarWarsFilters />
           </Grid>
           <Grid item xs={12}>
-            <Loading searching={this.props.searching}/>
           </Grid>
           <Grid item xs={12}>
             <List>
