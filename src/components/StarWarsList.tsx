@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, CircularProgress } from '@material-ui/core';
+import { TextField, CircularProgress, Grid, List } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
 import { Dispatch, bindActionCreators } from 'redux';
 import { searchActionCreator, AppActions } from '../store/actions';
@@ -44,18 +44,31 @@ export default connect(
 
     render() {
       return (
-        <div>
-          <h1>
-            star wars SWAPI search
-          </h1>
-          <TextField id="search" type="text" placeholder="search" onChange={(e) => this.searchChanged(e)} onKeyPress={(e) => this.checkForSubmition(e)}/>
-          <StarWarsFilters />
-          <Loading searching={this.props.searching}/>
-          <Error shouldDisplay={this.props.searchError}/>
-          <ul>
-            {this.props.searchResult.map((result, index) => <StarWarsItem key={index} item={result} />)}
-          </ul>
-        </div>
+        <Grid container style={{textAlign: "center"}}>
+          <Grid item xs={12}>
+            <Error shouldDisplay={this.props.searchError}/>
+            <h1>star wars SWAPI search</h1>
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              id="search"
+              type="text"
+              placeholder="search"
+              onChange={(e) => this.searchChanged(e)}
+              onKeyPress={(e) => this.checkForSubmition(e)} />
+          </Grid>
+          <Grid item xs={12}>
+            <StarWarsFilters />
+          </Grid>
+          <Grid item xs={12}>
+            <Loading searching={this.props.searching}/>
+          </Grid>
+          <Grid item xs={12}>
+            <List>
+              {this.props.searchResult.map((result, index) => <StarWarsItem key={index} item={result} />)}
+            </List>
+          </Grid>
+        </Grid>
       );
     }
   }
