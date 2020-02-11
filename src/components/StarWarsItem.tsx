@@ -5,17 +5,17 @@ export default class StarWarsItem extends Component<{item: Film | Species | Peop
   render() {
     switch (this.props.item.type) {
       case "People":
-        return <li key={this.props.item.url}>{this.props.item.name}</li>
+        return <li>{this.props.item.name}</li>
       case "Film":
-        return <li key={this.props.item.url}>{this.props.item.title}</li>
+        return <li>{this.props.item.title}</li>
       case "Planet":
-        return <li key={this.props.item.url}>{this.props.item.name}</li>
+        return <li>{this.props.item.name}</li>
       case "Species":
-        return <li key={this.props.item.url}>{this.props.item.name}</li>
+        return <li>{this.props.item.name}</li>
       case "Starship":
-        return <li key={this.props.item.url}>{this.props.item.name}</li>
+        return <li>{this.props.item.name}</li>
       case "Vehicle":
-        return <li key={this.props.item.url}>{this.props.item.name}</li>
+        return <li>{this.props.item.name}</li>
       default:
         return null;
     }

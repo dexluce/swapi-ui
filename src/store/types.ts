@@ -1,4 +1,5 @@
 export type SearchResult = Array<Film | Species | People | Planet | Starship | Vehicle>;
+export type Filters = { people: boolean, film: boolean, planet: boolean, species: boolean, starship: boolean, vehicle: boolean, [key: string]: boolean }
 
 export interface People {
   type: "People"

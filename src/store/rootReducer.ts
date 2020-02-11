@@ -29,6 +29,18 @@ export const rootReducer: Reducer<AppState | any, AppActions> = (
         searching: false
       };
     }
+    case "SEARCH_CHANGED": {
+      return {
+        ...state,
+        search: action.search
+      }
+    }
+    case "FILTERS_CHANGED": {
+      return {
+        ...state,
+        filters: action.filters
+      }
+    }
     default:
       neverReached(action); // when a new action is created, this helps us remember to handle it in the reducer
   }
